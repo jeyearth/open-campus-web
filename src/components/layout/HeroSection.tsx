@@ -13,18 +13,19 @@ const MyHeroSection = styled.section`
 
 const HeroContentWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  /* justify-content: space-between; */
+  /* align-items: flex-end; */
   width: 100%;
   max-width: 1100px;
-  margin: 0 auto 32px auto;
+  /* margin: 0 auto 32px auto; */
   padding: 0 32px;
 
   @media (max-width: 1080px) {
+    max-width: 100%;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     margin-bottom: 24px;
-    padding: 0 8px;
+    /* padding: 0 8px; */
   }
 `;
 
@@ -34,14 +35,16 @@ const HeroTitle = styled.h1`
   font-size: 10rem;
   font-weight: bold;
   margin-bottom: 16px;
+  text-shadow: 2px 3px 4px #808080;
 
   @media (max-width: 768px) {
-    font-size: 6rem;
+    font-size: 5.5rem;
   }
 `;
 
 const HeroInfo = styled.p`
-  font-size: 1.8rem;
+  font-size: 1.6rem;
+  font-weight: bold;
   margin-bottom: 0;
   /* text-align: right; */
   padding: 14px 28px;
@@ -73,7 +76,7 @@ const MyReserveButton = styled.a`
   color: #fff;
   padding: 16px 40px;
   border-radius: 32px;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   font-weight: bold;
   text-decoration: none;
   box-shadow: 0 4px 16px rgba(37, 99, 235, 0.15);
@@ -83,7 +86,6 @@ const MyReserveButton = styled.a`
   }
   @media (max-width: 768px) {
     padding: 12px 32px;
-    font-size: 1rem;
   }
 `;
 
