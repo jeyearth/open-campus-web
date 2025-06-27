@@ -10,8 +10,7 @@ import ProgramsSection from '../components/layout/ProgramsSection';
 import ModelCoursesSection from '../components/layout/ModelCoursesSection';
 import ScheduleSection from '../components/layout/ScheduleSection';
 import VoicesSection from '../components/layout/VoicesSection';
-import FacilitiesSection from '../components/layout/FacilitiesSection';
-import CirclesSection from '../components/layout/CirclesSection';
+import CampusLifeSection from '../components/layout/CampusLifeSection';
 import AdmissionSection from '../components/layout/AdmissionSection';
 import AccessSection from '../components/layout/AccessSection';
 import NavBar from '../components/layout/NavBar';
@@ -46,8 +45,7 @@ export default function Home() {
         <section id="courses"><ModelCoursesSection /></section>
         <section id="schedule"><ScheduleSection /></section>
         <section id="voices"><VoicesSection /></section>
-        <section id="facilities"><FacilitiesSection /></section>
-        <section id="circles"><CirclesSection /></section>
+        <section id="campus-life"><CampusLifeSection /></section>
         <section id="admission"><AdmissionSection /></section>
         <section id="access"><AccessSection /></section>
       </div>
