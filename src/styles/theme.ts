@@ -1,19 +1,30 @@
 export const theme = {
   pallet: {
+    // メインブルー
     primary: {
-      light: "#42a5f5",
       main: "#007BFF",
-      dark: "#1565c0",
-      contrastText: "#ffffff",
     },
+    // サブブルー
     secondary: {
-      light: "#ba68c8",
-      main: "#9c27b0",
-      dark: "#7b1fa2",
-      contrastText: "#ffffff",
+      main: "#F4F9FF",
     },
     orange: {
       main: "#FF6B00",
+    },
+    // ライトグレー
+    lightGray: {
+      main: "#F3F4F6",
+    },
+    baseWhite: {
+      main: "#ffffff",
+    },
+    // 見出し（h2）
+    heading: {
+      main: "#1A202C",
+    },
+    // サブテキスト
+    subText: {
+      main: "#666666",
     },
   },
   offset: {
