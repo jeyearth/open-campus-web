@@ -1,59 +1,168 @@
 import React from 'react';
+import styled from 'styled-components';
 
 const voices = [
   {
-    name: '佐藤 花子',
-    school: '東京都立○○高校',
-    grade: '2年',
-    comment: 'オープンキャンパスで在学生の話を聞き、雰囲気の良さに惹かれました。入学後はAI研究に挑戦中です！',
-    img: '/globe.svg',
+    name: '佐藤 葵さん',
+    comment: '在学生の方がとても親切で、大学生活のリアルな話を聞けたのが良かったです。キャンパスも広くて綺麗で、ここで学びたいという気持ちが強くなりました。一人で参加しましたが、すぐに他の参加者とも打ち解けられて楽しかったです。',
+    img: '/voice01-sato.jpeg',
+    rating: 5,
   },
   {
-    name: '田中 太一',
-    school: '埼玉県立△△高校',
-    grade: '1年',
-    comment: '模擬授業がとても分かりやすく、情報学科の学びの幅広さを実感できました。',
-    img: '/file.svg',
+    name: '高橋 健太さん',
+    comment: '最先端の研究設備に驚きました。先生方の説明も分かりやすく、専門分野への興味が一層深まりました。模擬授業は高校の授業とは違う大学ならではの面白さがあり、知的好奇心を刺激される最高の体験でした。',
+    img: '/voice02-takahashi.jpeg',
+    rating: 5,
   },
   {
-    name: '鈴木 美咲',
-    school: '千葉県立□□高校',
-    grade: '3年',
-    comment: '研究室見学で最先端の設備に驚きました。将来はデータサイエンティストを目指しています。',
-    img: '/window.svg',
+    name: '鈴木 美咲さん',
+    comment: '最初は緊張していましたが、個別相談で先生が親身に話を聞いてくださり、入試や学生生活への不安が解消されました。先輩方の姿を見て、自分の大学生活が具体的にイメージでき、受験勉強へのモチベーションが上がりました。',
+    img: '/voice03-suzuki.jpeg',
+    rating: 5,
   },
 ];
 
+const MyVoicesSection = styled.section`
+  background: ${(props) => props.theme.pallet.lightGray.main};
+  padding: 48px 0;
+`;
+
+const Container = styled.div`
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 16px;
+`;
+
+const Title = styled.h2`
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 32px;
+  text-align: left;
+  
+  @media (max-width: 768px) {
+    font-size: 1.8rem;
+    margin-bottom: 24px;
+  }
+`;
+
+const CardsContainer = styled.div`
+  display: flex;
+  gap: 24px;
+  justify-content: flex-start;
+  
+  @media (max-width: 864px) {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 16px;
+    
+    &::-webkit-scrollbar {
+      height: 6px;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: #e2e8f0;
+      border-radius: 3px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background: #94a3b8;
+      border-radius: 3px;
+    }
+  }
+`;
+
+const VoiceCard = styled.div`
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  scroll-snap-align: start;
+  
+  @media (max-width: 864px) {
+    min-width: 280px;
+    max-width: 280px;
+    padding: 24px;
+  }
+`;
+
+const QuoteIcon = styled.div`
+  color: ${(props) => props.theme.pallet.primary.main};
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: left;
+  line-height: 1;
+`;
+
+const Comment = styled.p`
+  font-size: 1rem;
+  color: ${(props) => props.theme.pallet.text.main};
+  line-height: 1.6;
+  margin-bottom: 24px;
+  text-align: left;
+  flex-grow: 1;
+`;
+
+const ProfileSection = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 12px;
+`;
+
+const ProfileImage = styled.img`
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: #e0e7ef;
+  object-fit: cover;
+`;
+
+const ProfileInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-grow: 1;
+`;
+
+const Name = styled.div`
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 4px;
+  color: ${(props) => props.theme.pallet.heading.main};
+`;
+
+const Stars = styled.div`
+  color: #fbbf24;
+  font-size: 1.2rem;
+`;
+
 const VoicesSection: React.FC = () => {
   return (
-    <section style={{ background: '#f8fafc', padding: '48px 0' }}>
-      <div style={{ maxWidth: 900, margin: '0 auto', textAlign: 'center' }}>
-        <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: 32 }}>
-          先輩体験者の声
-        </h2>
-        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 24 }}>
-          {voices.map((v, i) => (
-            <div key={i} style={{
-              background: '#fff',
-              borderRadius: 16,
-              padding: 28,
-              width: 260,
-              minHeight: 220,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              marginBottom: 16,
-              boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
-            }}>
-              <img src={v.img} alt={v.name} style={{ width: 56, height: 56, borderRadius: '50%', marginBottom: 12, background: '#e0e7ef' }} />
-              <div style={{ fontWeight: 'bold', fontSize: '1.05rem', marginBottom: 4 }}>{v.name} <span style={{ fontWeight: 'normal', fontSize: '0.95rem', color: '#64748b' }}>（{v.school}・{v.grade}）</span></div>
-              <p style={{ fontSize: '0.98rem', color: '#334155', marginTop: 8 }}>{v.comment}</p>
-            </div>
+    <MyVoicesSection>
+      <Container>
+        <Title>体験者の声</Title>
+        <CardsContainer>
+          {voices.map((voice, i) => (
+            <VoiceCard key={i}>
+              <QuoteIcon>"</QuoteIcon>
+              <Comment>{voice.comment}</Comment>
+              <ProfileSection>
+                <ProfileImage src={voice.img} alt={voice.name} />
+                <ProfileInfo>
+                  <Name>{voice.name}</Name>
+                  <Stars>{'★'.repeat(voice.rating)}</Stars>
+                </ProfileInfo>
+              </ProfileSection>
+            </VoiceCard>
           ))}
-        </div>
-      </div>
-    </section>
+        </CardsContainer>
+      </Container>
+    </MyVoicesSection>
   );
 };
 
-export default VoicesSection; 
+export default VoicesSection;

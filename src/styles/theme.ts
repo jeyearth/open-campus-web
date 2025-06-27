@@ -22,6 +22,10 @@ export const theme = {
     heading: {
       main: "#1A202C",
     },
+    // テキスト
+    text: {
+      main: "#333333",
+    },
     // サブテキスト
     subText: {
       main: "#666666",
