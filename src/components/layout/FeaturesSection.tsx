@@ -44,7 +44,7 @@ const MyCardContainer = styled.div`
 const MyFeatureCard = styled.div`
   background: ${(props) => props.theme.pallet.secondary.main};
   border-radius: 16px;
-  box-shadow: 0 2px 12px rgba(0, 0,0, 0.06);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
   padding: 32px;
   width: 260px;
   min-height: 260px;
