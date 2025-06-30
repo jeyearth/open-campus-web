@@ -38,15 +38,21 @@ const NavContainer = styled.div`
 `;
 
 const LeftWrapper = styled.div`
+  height: 100%;
   display: flex;
   align-items: center;
 `;
 
-const Logo = styled.span`
+const Logo = styled.img`
+  height: 100%;
+  margin-right: 4px;
+`;
+
+const LogoTitle = styled.span`
   font-weight: bold;
   font-size: 1.2rem;
   margin-right: 24px;
-  color: #2563eb;
+  color: ${props => props.theme.pallet.primary.main};
 `;
 
 const NavList = styled.ul<{ open: boolean }>`
@@ -73,15 +79,14 @@ const NavList = styled.ul<{ open: boolean }>`
 `;
 
 const NavItem = styled.a`
-  color: #334155;
+  color: ${props => props.theme.pallet.subText.main};
   text-decoration: none;
-  font-weight: 500;
-  font-size: 1rem;
+  font-size: 0.8rem;
   padding: 4px 4px;
   transition: color 0.2s;
   cursor: pointer;
   &:hover {
-    color: #2563eb;
+    color: ${props => props.theme.pallet.primary.main};
   }
   @media (max-width: 768px) {
     display: block;
@@ -107,9 +112,9 @@ const Hamburger = styled.button<{ open: boolean }>`
   span {
     display: block;
     width: 24px;
-    height: 3px;
+    height: 2px;
     margin: 3px 0;
-    background: ${({ open }) => (open ? '#2563eb' : '#334155')};
+    background: ${({ open, theme }) => (open ? theme.pallet.primary.main : theme.pallet.subText.main)};
     border-radius: 2px;
     transition: 0.3s;
   }
@@ -124,7 +129,8 @@ const NavBar: React.FC = () => {
     <MyNavBar>
       <NavContainer>
         <LeftWrapper>
-          <Logo>JFUT 情報学科</Logo>
+          <Logo src="/jfut-logo.png" alt="JFUT Logo" />
+          <LogoTitle>JFUT 情報学科</LogoTitle>
         </LeftWrapper>
         <Hamburger
           open={open}
@@ -132,13 +138,10 @@ const NavBar: React.FC = () => {
           onClick={() => setOpen((prev) => !prev)}
         >
           <span style={{
-            transform: open ? 'rotate(45deg) translate(5px, 5px)' : 'none'
+            transform: open ? 'rotate(45deg) translate(3px, 3px)' : 'none'
           }} />
           <span style={{
-            opacity: open ? 0 : 1
-          }} />
-          <span style={{
-            transform: open ? 'rotate(-45deg) translate(8px, -8px)' : 'none'
+            transform: open ? 'rotate(-45deg) translate(3px, -3px)' : 'none'
           }} />
         </Hamburger>
         <NavList open={open}>
