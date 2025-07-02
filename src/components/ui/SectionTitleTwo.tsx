@@ -6,57 +6,86 @@ interface SectionTitleTwoProps {
   japaneseTitle: string;
 }
 
-const SectionTitleTwo: React.FC<SectionTitleTwoProps> = ({ 
+const SectionTitleTwo: React.FC<SectionTitleTwoProps> = ({
   englishTitle,
   japaneseTitle
 }) => {
   return (
-    <TitleContainer>
-      <EnglishTitle>{englishTitle}</EnglishTitle>
-      <JapaneseTitle>{japaneseTitle}</JapaneseTitle>
-    </TitleContainer>
+    <TitileWrapper>
+      <TitleContainer>
+        <EnglishTitle>{englishTitle}</EnglishTitle>
+        <JapaneseTitle>{japaneseTitle}</JapaneseTitle>
+      </TitleContainer>
+        <HorizontalLineFirst />
+        <HorizontalLineSecond />
+    </TitileWrapper>
   );
 };
 
+const TitileWrapper = styled.div`
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+`;
+
 const TitleContainer = styled.div`
   text-align: center;
-  margin-bottom: 3rem;
-  
-  @media (max-width: 768px) {
-    margin-bottom: 2rem;
-  }
+  position: relative;
 `;
 
 const EnglishTitle = styled.p`
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: #666;
-  margin-bottom: 0.5rem;
-  letter-spacing: 0.1em;
+  font-size: 5rem;
+  font-weight: 900;
+  color: ${(props) => props.theme.pallet.secondary.main};
+  margin: 0;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  z-index: 1;
   
   @media (max-width: 768px) {
-    font-size: 1rem;
+    font-size: 4rem;
   }
   
   @media (max-width: 480px) {
-    font-size: 0.9rem;
+    font-size: 3rem;
   }
 `;
 
 const JapaneseTitle = styled.h2`
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
-  color: #333;
+  color: ${(props) => props.theme.pallet.heading.main};
   margin: 0;
+  position: relative;
+  z-index: 2;
+  padding: 2rem 0;
   
   @media (max-width: 768px) {
     font-size: 2rem;
+    padding: 1.5rem 0;
   }
   
   @media (max-width: 480px) {
     font-size: 1.7rem;
+    padding: 1rem 0;
   }
 `;
+
+const HorizontalLineFirst = styled.div`
+  background-color: ${(props) => props.theme.pallet.secondary.main};
+  border-radius: 9999px;
+  height: 12px;
+  width: 100%;
+  margin-bottom: 10px;
+`;
+
+const HorizontalLineSecond = styled(HorizontalLineFirst)`
+  margin-left: -40%;
+`;
+
 
 export default SectionTitleTwo;

@@ -72,7 +72,7 @@ const FeaturesSection: React.FC = () => {
     <MyFeaturesSection>
       <MyFeatureWrapper>
         <SectionTitleTwo
-          englishTitle="University Features"
+          englishTitle="Features"
           japaneseTitle="大学の特色"
         />
         <SectionTitle>

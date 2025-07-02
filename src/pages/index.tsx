@@ -38,15 +38,15 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavBar />
-      <div style={{ 
-        paddingTop: 56, 
+      <div style={{
+        paddingTop: 56,
         paddingBottom: 60,
         overscrollBehavior: 'none',
         WebkitOverflowScrolling: 'touch'
       }}>
         {/* <section id="hero"><HeroSection /></section> */}
         <section id="hero"><HeroSectionTwo /></section>
-        <section id="hero"><HeroSectionNew /></section>
+        {/* <section id="hero"><HeroSectionNew /></section> */}
         <section id="features"><FeaturesSection /></section>
         <section id="steps"><StepsSection /></section>
         <section id="fields"><FieldsSection /></section>
