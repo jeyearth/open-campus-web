@@ -1,8 +1,12 @@
 export const theme = {
   pallet: {
-    // メインブルー
+    // メインブルー1
     primary: {
       main: "#007BFF",
+    },
+    // メインブルー2
+    primarySecond: {
+      main: "#7EAFFF",
     },
     // サブブルー
     secondary: {

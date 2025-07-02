@@ -4,6 +4,7 @@ import { SectionTitle } from '../ui/SectionTitle';
 import { FaLaptopCode } from "react-icons/fa";
 import { SiFuturelearn } from "react-icons/si";
 import { GiCircuitry } from "react-icons/gi";
+import SectionTitleTwo from '../ui/SectionTitleTwo';
 
 const features = [
   {
@@ -70,6 +71,10 @@ const FeaturesSection: React.FC = () => {
   return (
     <MyFeaturesSection>
       <MyFeatureWrapper>
+        <SectionTitleTwo
+          englishTitle="University Features"
+          japaneseTitle="大学の特色"
+        />
         <SectionTitle>
           JFUT情報学科の特色・強み
         </SectionTitle>
