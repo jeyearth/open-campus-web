@@ -75,9 +75,9 @@ const FeaturesSection: React.FC = () => {
           englishTitle="Features"
           japaneseTitle="大学の特色"
         />
-        <SectionTitle>
+        {/* <SectionTitle>
           JFUT情報学科の特色・強み
-        </SectionTitle>
+        </SectionTitle> */}
         <MyCardContainer>
           {features.map((f, i) => (
             <MyFeatureCard key={i}>

@@ -4,20 +4,22 @@ import styled from "styled-components";
 interface SectionTitleTwoProps {
   englishTitle: string;
   japaneseTitle: string;
+  isLightTheme?: boolean;
 }
 
 const SectionTitleTwo: React.FC<SectionTitleTwoProps> = ({
   englishTitle,
-  japaneseTitle
+  japaneseTitle,
+  isLightTheme = true
 }) => {
   return (
     <TitileWrapper>
       <TitleContainer>
-        <EnglishTitle>{englishTitle}</EnglishTitle>
+        <EnglishTitle $isLightTheme={isLightTheme}>{englishTitle}</EnglishTitle>
         <JapaneseTitle>{japaneseTitle}</JapaneseTitle>
       </TitleContainer>
-        <HorizontalLineFirst />
-        <HorizontalLineSecond />
+        <HorizontalLineFirst $isLightTheme={isLightTheme}/>
+        <HorizontalLineSecond $isLightTheme={isLightTheme}/>
     </TitileWrapper>
   );
 };
@@ -32,10 +34,18 @@ const TitleContainer = styled.div`
   position: relative;
 `;
 
-const EnglishTitle = styled.p`
+interface EnglishTitleProps {
+  $isLightTheme: boolean;
+}
+
+const EnglishTitle = styled.p<EnglishTitleProps>`
   font-size: 5rem;
   font-weight: 900;
-  color: ${(props) => props.theme.pallet.secondary.main};
+  color: ${(props) =>
+    props.$isLightTheme
+      ? props.theme.pallet.secondary.main
+      : props.theme.pallet.baseWhite.main
+  };
   margin: 0;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -75,8 +85,12 @@ const JapaneseTitle = styled.h2`
   }
 `;
 
-const HorizontalLineFirst = styled.div`
-  background-color: ${(props) => props.theme.pallet.secondary.main};
+const HorizontalLineFirst = styled.div<EnglishTitleProps>`
+  background-color: ${(props) =>
+    props.$isLightTheme
+      ? props.theme.pallet.secondary.main
+      : props.theme.pallet.baseWhite.main
+  };
   border-radius: 9999px;
   height: 12px;
   width: 100%;

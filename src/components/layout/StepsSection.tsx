@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { SectionTitle } from '../ui/SectionTitle';
+import SectionTitleTwo from '../ui/SectionTitleTwo';
 
 const ReserveButton = styled.a`
   display: inline-block;
@@ -71,7 +72,7 @@ const steps = [
 ];
 
 const MyStepsSection = styled.section`
-  background: ${({ theme }) => theme.pallet.lightGray.main};
+  background: ${({ theme }) => theme.pallet.secondary.main};
   padding: 48px 0;
 `;
 
@@ -139,14 +140,19 @@ const StepsSection: React.FC = () => {
   return (
     <MyStepsSection>
       <StepsWrapper>
-        <SectionTitle>
+        <SectionTitleTwo
+          englishTitle="Steps"
+          japaneseTitle="参加への3ステップ"
+          isLightTheme={false}
+        />
+        {/* <SectionTitle>
           オープンキャンパス参加への<br />3ステップ
-        </SectionTitle>
+        </SectionTitle> */}
         {steps.map((s, i) => (
           <StepRow key={i}>
-              <StepNumber>
-                STEP<span style={{ fontSize: '4rem', fontWeight: 'bold', marginBottom: 0, lineHeight: 0.9 }}>{s.step}</span>
-              </StepNumber>
+            <StepNumber>
+              STEP<span style={{ fontSize: '4rem', fontWeight: 'bold', marginBottom: 0, lineHeight: 0.9 }}>{s.step}</span>
+            </StepNumber>
             <StepCard>
               <StepCardTitle>{s.title}</StepCardTitle>
               <div>{s.desc}</div>

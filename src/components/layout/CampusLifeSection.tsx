@@ -1,58 +1,59 @@
 import React from 'react';
 import styled from 'styled-components';
+import SectionTitleTwo from '../ui/SectionTitleTwo';
 
 const facilities = [
-    {
-        title: 'Library',
-        subtitle: '図書館',
-        description: '圧倒的な蔵書数を誇る大学の知の拠点。集中して学習できる個人ブースも人気です。',
-        img: '/library.jpeg'
-    },
-    {
-        title: 'Cafeteria',
-        subtitle: '学食',
-        description: '日替わりランチが人気の学生食堂。仲間と語らい、午後の活力もチャージできます。',
-        img: '/cafeteria.jpeg'
-    },
-    {
-        title: 'PC Room',
-        subtitle: 'PCルーム',
-        description: '最新PCと大型モニターを完備。レポート作成から専門的な演習まで快適に利用できます。',
-        img: '/pc-room.jpeg'
-    },
-    {
-        title: 'Sports Center',
-        subtitle: 'スポーツセンター',
-        description: '最新マシンを備えたジムで気軽にリフレッシュ。体育館やグラウンドも充実しています。',
-        img: '/sports-center.jpeg'
-    }
+  {
+    title: 'Library',
+    subtitle: '図書館',
+    description: '圧倒的な蔵書数を誇る大学の知の拠点。集中して学習できる個人ブースも人気です。',
+    img: '/library.jpeg'
+  },
+  {
+    title: 'Cafeteria',
+    subtitle: '学食',
+    description: '日替わりランチが人気の学生食堂。仲間と語らい、午後の活力もチャージできます。',
+    img: '/cafeteria.jpeg'
+  },
+  {
+    title: 'PC Room',
+    subtitle: 'PCルーム',
+    description: '最新PCと大型モニターを完備。レポート作成から専門的な演習まで快適に利用できます。',
+    img: '/pc-room.jpeg'
+  },
+  {
+    title: 'Sports Center',
+    subtitle: 'スポーツセンター',
+    description: '最新マシンを備えたジムで気軽にリフレッシュ。体育館やグラウンドも充実しています。',
+    img: '/sports-center.jpeg'
+  }
 ];
 
 const circles = [
-    {
-        title: 'プログラミング研究会',
-        description: '仲間と切磋琢磨しながら、アプリ開発や競技プログラミングに挑戦できます。',
-    },
-    {
-        title: 'AI研究会',
-        description: '人工知能の最新技術を学び、実際にAIモデルを構築して社会課題の解決を目指します。',
-    },
-    {
-        title: 'サイバーセキュリティ部',
-        description: '情報セキュリティ技術を実践的に学び、CTF（Capture The Flag）大会にも出場します。',
-    },
-    {
-        title: 'e-sportsサークル',
-        description: 'チームで戦略を練り、様々なゲームタイトルで大会上位入賞を目指して活動しています。',
-    },
-    {
-        title: 'デジタルアート部',
-        description: 'ペンタブや3DCGソフトを使い、イラストや映像などデジタル作品を自由に創作します。',
-    },
-    {
-        title: 'ロボット研究会',
-        description: 'ロボットの設計からプログラミングまで、ものづくりの楽しさを追求する研究会です。',
-    }
+  {
+    title: 'プログラミング研究会',
+    description: '仲間と切磋琢磨しながら、アプリ開発や競技プログラミングに挑戦できます。',
+  },
+  {
+    title: 'AI研究会',
+    description: '人工知能の最新技術を学び、実際にAIモデルを構築して社会課題の解決を目指します。',
+  },
+  {
+    title: 'サイバーセキュリティ部',
+    description: '情報セキュリティ技術を実践的に学び、CTF（Capture The Flag）大会にも出場します。',
+  },
+  {
+    title: 'e-sportsサークル',
+    description: 'チームで戦略を練り、様々なゲームタイトルで大会上位入賞を目指して活動しています。',
+  },
+  {
+    title: 'デジタルアート部',
+    description: 'ペンタブや3DCGソフトを使い、イラストや映像などデジタル作品を自由に創作します。',
+  },
+  {
+    title: 'ロボット研究会',
+    description: 'ロボットの設計からプログラミングまで、ものづくりの楽しさを追求する研究会です。',
+  }
 ];
 
 const CampusLifeSectionWrapper = styled.section`
@@ -207,34 +208,39 @@ const CircleDescription = styled.p`
 `;
 
 const CampusLifeSection: React.FC = () => {
-    return (
-        <CampusLifeSectionWrapper>
-            <Container>
-                <MainTitle>充実のキャンパスライフ</MainTitle>
-                <SectionTitle>大学施設紹介</SectionTitle>
-                <FacilitiesGrid>
-                    {facilities.map((facility, index) => (
-                        <FacilityCard key={index}>
-                            <FacilityImage src={facility.img} />
-                            <FacilityTitle>{facility.title}</FacilityTitle>
-                            <FacilitySubtitle>{facility.subtitle}</FacilitySubtitle>
-                            <FacilityDescription>{facility.description}</FacilityDescription>
-                        </FacilityCard>
-                    ))}
-                </FacilitiesGrid>
+  return (
+    <CampusLifeSectionWrapper>
+      <Container>
+        <SectionTitleTwo
+          englishTitle="Campus Life"
+          japaneseTitle="充実のキャンパスライフ"
+          isLightTheme={false}
+        />
+        {/* <MainTitle>充実のキャンパスライフ</MainTitle> */}
+        <SectionTitle>大学施設紹介</SectionTitle>
+        <FacilitiesGrid>
+          {facilities.map((facility, index) => (
+            <FacilityCard key={index}>
+              <FacilityImage src={facility.img} />
+              <FacilityTitle>{facility.title}</FacilityTitle>
+              <FacilitySubtitle>{facility.subtitle}</FacilitySubtitle>
+              <FacilityDescription>{facility.description}</FacilityDescription>
+            </FacilityCard>
+          ))}
+        </FacilitiesGrid>
 
-                <SectionTitle>部活動・サークル紹介</SectionTitle>
-                <CirclesGrid>
-                    {circles.map((circle, index) => (
-                        <CircleCard key={index} >
-                            <CircleTitle>{circle.title}</CircleTitle>
-                            <CircleDescription>{circle.description}</CircleDescription>
-                        </CircleCard>
-                    ))}
-                </CirclesGrid>
-            </Container>
-        </CampusLifeSectionWrapper>
-    );
+        <SectionTitle>部活動・サークル紹介</SectionTitle>
+        <CirclesGrid>
+          {circles.map((circle, index) => (
+            <CircleCard key={index} >
+              <CircleTitle>{circle.title}</CircleTitle>
+              <CircleDescription>{circle.description}</CircleDescription>
+            </CircleCard>
+          ))}
+        </CirclesGrid>
+      </Container>
+    </CampusLifeSectionWrapper>
+  );
 };
 
 export default CampusLifeSection;
