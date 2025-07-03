@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const navItems = [
-  { label: '特色・強み', to: '#features' },
+  { label: '大学の特色', to: '#features' },
   { label: '3ステップ', to: '#steps' },
   // { label: '分野紹介', to: '#fields' },
   // { label: 'プログラム', to: '#programs' },
   // { label: 'モデルコース', to: '#courses' },
-  { label: 'タイムスケジュール', to: '#schedule' },
+  { label: '一日の流れ', to: '#schedule' },
   { label: '体験者の声', to: '#voices' },
   // { label: '施設紹介', to: '#facilities' },
   // { label: 'サークル', to: '#circles' },
@@ -41,18 +41,40 @@ const LeftWrapper = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
+  gap: 16px;
 `;
 
-const Logo = styled.img`
-  height: 100%;
-  margin-right: 4px;
+const LogoText = styled.div`
+  display: flex;
+  flex-direction: row;
+  line-height: 1.2;
 `;
 
 const LogoTitle = styled.span`
   font-weight: bold;
-  font-size: 1.2rem;
-  margin-right: 24px;
-  color: ${props => props.theme.pallet.primary.main};
+  font-size: 1.6rem;
+  color: ${props => props.theme.pallet.heading.main};
+  
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
+`;
+
+const LogoSubtitleWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-left: 12px;
+  gap: 2px;
+`;
+
+const LogoSubtitle = styled.span`
+  font-size: 0.75rem;
+  color: ${props => props.theme.pallet.subText.main};
+  font-weight: normal;
+  
+  @media (max-width: 768px) {
+    font-size: 0.7rem;
+  }
 `;
 
 const NavList = styled.ul<{ open: boolean }>`
@@ -129,8 +151,13 @@ const NavBar: React.FC = () => {
     <MyNavBar>
       <NavContainer>
         <LeftWrapper>
-          <Logo src="/jfut-logo.png" alt="JFUT Logo" />
-          <LogoTitle>JFUT 情報学科</LogoTitle>
+          <LogoText>
+            <LogoTitle>JFUT</LogoTitle>
+            <LogoSubtitleWrapper>
+              <LogoSubtitle>日本未来工科大学</LogoSubtitle>
+              <LogoSubtitle>Japan Future University of Technology</LogoSubtitle>
+            </LogoSubtitleWrapper>
+          </LogoText>
         </LeftWrapper>
         <Hamburger
           open={open}
