@@ -46,7 +46,7 @@ const LogoText = styled.a`
 
 const LogoTitle = styled.span`
   font-weight: bold;
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   color: ${props => props.theme.pallet.heading.main};
   
   @media (max-width: 768px) {
@@ -57,6 +57,7 @@ const LogoTitle = styled.span`
 const LogoSubtitleWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   margin-left: 12px;
   gap: 2px;
 `;
@@ -65,6 +66,7 @@ const LogoSubtitle = styled.span`
   font-size: 0.75rem;
   color: ${props => props.theme.pallet.subText.main};
   font-weight: normal;
+  line-height: 0.9;
   
   @media (max-width: 768px) {
     font-size: 0.7rem;

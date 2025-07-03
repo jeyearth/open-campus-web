@@ -71,7 +71,7 @@ const Footer: React.FC = () => {
   return (
     <FooterContainer>
       <FooterContent>
-        <FooterText>© 2024 JFUT 情報学科</FooterText>
+        <FooterText>© 2024 JFUT 日本未来工科大学</FooterText>
         <FooterSeparator>|</FooterSeparator>
         <FooterLink href="mailto:info@jfu.ac.jp">お問い合わせ</FooterLink>
       </FooterContent>
