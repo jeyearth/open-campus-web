@@ -313,7 +313,7 @@ const MyReserveButton = styled.a`
   box-shadow: 0 4px 16px rgba(255, 107, 0, 0.3);
   transition: all 0.2s;
   position: relative;
-  z-index: 9999;
+  z-index: 2;
   bottom: 14vh;
   
   &:hover {
