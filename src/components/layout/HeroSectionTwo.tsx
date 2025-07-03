@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 const MyHeroSection = styled.section`
   background: ${(props) => props.theme.pallet.secondary.main};
@@ -58,7 +59,7 @@ const LeftContainerOne = styled.div`
     gap: 20px;
 `;
 
-const HeroCapsule1 = styled.div`
+const HeroCapsule1 = styled(motion.div)`
     width: 100%;
     height: 120px;
     background-color: ${(props) => props.theme.pallet.primarySecond.main};
@@ -82,18 +83,13 @@ const HeroCapsule1 = styled.div`
     }
 `;
 
-const HeroCapsule2 = styled.div`
+const HeroCapsule2 = styled(motion.div)`
     width: 160px;
     height: 480px;
     background-color: ${(props) => props.theme.pallet.primary.main};
     margin-top: -300px;
-    /* margin-left: 30%; */
     border-radius: 9999px;
-    /* @media (max-width: 1024px) {
-        width: 120px;
-        height: 150px;
-        margin-top: -5%;
-    } */
+
     @media (max-width: 1024px) {
         margin-top: -400px;
     }
@@ -102,11 +98,6 @@ const HeroCapsule2 = styled.div`
         margin-top: -500px;
         width: 20%;
     }
-    
-    /* @media (max-width: 480px) {
-        width: 80px;
-        height: 100px;
-    } */
 `;
 
 const LeftContainerTwo = styled.div`
@@ -120,7 +111,7 @@ const LeftContainerTwo = styled.div`
     gap: 20px;
 `;
 
-const HeroTitle = styled.h1`
+const HeroTitle = styled(motion.h1)`
     color: ${(props) => props.theme.pallet.primary.main};
     font-size: 8rem;
     font-weight: 900;
@@ -129,16 +120,16 @@ const HeroTitle = styled.h1`
     margin-bottom: 40px;
 
     @media (max-width: 1024px) {
-    font-size: 7rem;
-  }
+        font-size: 7rem;
+    }
 
-  @media (max-width: 768px) {
-    font-size: 14vw;
-  }
+    @media (max-width: 768px) {
+        font-size: 14vw;
+    }
 
-  @media (max-width: 480px) {
-    font-size: 13vw;
-  }
+    @media (max-width: 480px) {
+        font-size: 13vw;
+    }
 `;
 
 const HeroTitleSpan = styled.span`
@@ -167,7 +158,7 @@ const LeftContainerThree = styled.div`
     gap: 20px;
 `;
 
-const HeroCapsule3 = styled.div`
+const HeroCapsule3 = styled(motion.div)`
     width: 100px;
     height: 300%;
     background-color: ${(props) => props.theme.pallet.primary.main};
@@ -193,7 +184,7 @@ const HeroCapsule3 = styled.div`
     }
 `;
 
-const HeroCapsule4 = styled.div`
+const HeroCapsule4 = styled(motion.div)`
     width: 140px;
     height: 300%;
     background-color: ${(props) => props.theme.pallet.primarySecond.main};
@@ -230,14 +221,14 @@ const RightWrapper = styled.div`
     }
 `;
 
-const HeroImageContainer = styled.div`
+const HeroImageContainer = styled(motion.div)`
     width: 100%;
     max-width: 24rem;
     height: 60vh;
     position: relative;
 `;
 
-const HeroImage = styled.img`
+const HeroImage = styled(motion.img)`
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -247,7 +238,7 @@ const HeroImage = styled.img`
     position: absolute;
 `;
 
-const DateCircle = styled.div`
+const DateCircle = styled(motion.div)`
     background-color: ${(props) => props.theme.pallet.primary.main};
     border-radius: 50%;
     width: 100%;
@@ -301,7 +292,7 @@ const DateMainSpan = styled.span`
     }
 `;
 
-const MyReserveButton = styled.a`
+const MyReserveButton = styled(motion.a)`
   display: inline-block;
   background: ${(props) => props.theme.pallet.orange.main};
   color: #fff;
@@ -339,27 +330,84 @@ const HeroSectionTwo: React.FC = () => {
             <HeroContentWrapper>
                 <LeftWrapper>
                     <LeftContainerOne>
-                        <HeroCapsule1 />
-                        <HeroCapsule2 />
+                        <HeroCapsule1
+                            initial={{ x: -400, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            transition={{
+                                duration: 0.8,
+                                ease: "easeOut",
+                                delay: 0.2
+                            }}
+                        />
+                        <HeroCapsule2
+                            initial={{ y: -300, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{
+                                duration: 0.8,
+                                ease: "easeOut",
+                                delay: 0.4
+                            }}
+                        />
                     </LeftContainerOne>
                     <LeftContainerTwo>
-                        <HeroTitle>
-                            {/* <span style={{ fontSize: '5rem' }}>JFUT<br /></span> */}
+                        <HeroTitle
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{
+                                duration: 1.2,
+                                ease: "easeOut",
+                                delay: 1
+                            }}
+                        >
                             <HeroTitleSpan>JFUT<br /></HeroTitleSpan>
                             OPEN<br />
                             CAMPUS<br />
                         </HeroTitle>
                     </LeftContainerTwo>
                     <LeftContainerThree>
-                        <HeroCapsule3 />
-                        <HeroCapsule4 />
+                        <HeroCapsule3
+                            initial={{ y: -400, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{
+                                duration: 0.8,
+                                ease: "easeOut",
+                                delay: 0.6
+                            }}
+                        />
+                        <HeroCapsule4
+                            initial={{ y: -500, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{
+                                duration: 1.4,
+                                ease: "easeOut",
+                                delay: 0.8
+                            }}
+                        />
                     </LeftContainerThree>
                 </LeftWrapper>
                 <RightWrapper>
                     <HeroImageContainer>
-                        <HeroImage src="/hero-img-01.jpeg" alt="Hero Image" />
+                        <HeroImage
+                            src="/hero-img-01.jpeg"
+                            alt="Hero Image"
+                            initial={{ y: -300, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{
+                                duration: 0.8,
+                                ease: "easeOut",
+                                delay: 1.0
+                            }}
+                        />
                     </HeroImageContainer>
-                    <DateCircle>
+                    <DateCircle
+                        initial={{ y: -500, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{
+                            duration: 0.8,
+                            ease: "easeOut",
+                            delay: 1.2
+                        }}
+                    >
                         <DateCircleWrapper>
                             <DateYear>2025</DateYear>
                             <DateMain>
@@ -371,7 +419,16 @@ const HeroSectionTwo: React.FC = () => {
                 </RightWrapper>
             </HeroContentWrapper>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <MyReserveButton href="#reserve">
+                <MyReserveButton 
+                    href="#reserve"
+                    initial={{ opacity: 0, y: 4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                        duration: 0.8,
+                        ease: "easeOut",
+                        delay: 2
+                    }}
+                >
                     予約はこちらから！
                 </MyReserveButton>
             </div>
