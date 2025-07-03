@@ -78,7 +78,7 @@ const StudyFields: React.FC<StudyFieldsProps> = ({ fields }) => {
           key={index}
           variants={{
             offscreen: {
-              y: 100,
+              y: 40,
               opacity: 0,
             },
             onscreen: {

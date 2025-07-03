@@ -38,7 +38,7 @@ const LeftWrapper = styled.div`
   gap: 16px;
 `;
 
-const LogoText = styled.div`
+const LogoText = styled.a`
   display: flex;
   flex-direction: row;
   line-height: 1.2;
@@ -145,7 +145,9 @@ const NavBar: React.FC = () => {
     <MyNavBar>
       <NavContainer>
         <LeftWrapper>
-          <LogoText>
+          <LogoText
+            href="#hero"
+          >
             <LogoTitle>JFUT</LogoTitle>
             <LogoSubtitleWrapper>
               <LogoSubtitle>日本未来工科大学</LogoSubtitle>

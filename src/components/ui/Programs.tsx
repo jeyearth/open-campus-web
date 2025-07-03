@@ -76,7 +76,7 @@ const Programs: React.FC<ProgramsProps> = ({ programs }) => {
           key={index}
           variants={{
             offscreen: {
-              y: 100,
+              y: 40,
               opacity: 0,
             },
             onscreen: {
