@@ -85,7 +85,7 @@ const SectionTitle = styled.h3`
   font-weight: bold;
   margin-bottom: 32px;
   text-align: center;
-  color: #2563eb;
+  color: ${props => props.theme.pallet.primary.main};
   
   @media (max-width: 768px) {
     font-size: 1.5rem;
@@ -121,7 +121,6 @@ const FacilityCard = styled.div`
 
 const FacilityImage = styled.img`
   width: 100%;
-  /* height: 48px; */
   border-radius: 24px;
   background: #e0e7ef;
   object-fit: cover;
@@ -216,7 +215,6 @@ const CampusLifeSection: React.FC = () => {
           japaneseTitle="充実のキャンパスライフ"
           isLightTheme={true}
         />
-        {/* <MainTitle>充実のキャンパスライフ</MainTitle> */}
         <SectionTitle>大学施設紹介</SectionTitle>
         <FacilitiesGrid>
           {facilities.map((facility, index) => (

@@ -76,7 +76,7 @@ const StudyFields: React.FC<StudyFieldsProps> = ({ fields }) => {
         <StudyFieldItem key={index}>
           <StudyFieldIcon>
             <StudyFieldIconImage
-                src={`/icons/${field.icon}`}
+              src={`/icons/${field.icon}`}
               alt={field.fieldName}
             />
           </StudyFieldIcon>

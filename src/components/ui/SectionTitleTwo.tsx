@@ -18,8 +18,8 @@ const SectionTitleTwo: React.FC<SectionTitleTwoProps> = ({
         <EnglishTitle $isLightTheme={isLightTheme}>{englishTitle}</EnglishTitle>
         <JapaneseTitle>{japaneseTitle}</JapaneseTitle>
       </TitleContainer>
-        <HorizontalLineFirst $isLightTheme={isLightTheme}/>
-        <HorizontalLineSecond $isLightTheme={isLightTheme}/>
+      <HorizontalLineFirst $isLightTheme={isLightTheme} />
+      <HorizontalLineSecond $isLightTheme={isLightTheme} />
     </TitileWrapper>
   );
 };
@@ -100,6 +100,5 @@ const HorizontalLineFirst = styled.div<EnglishTitleProps>`
 const HorizontalLineSecond = styled(HorizontalLineFirst)`
   margin-left: -40%;
 `;
-
 
 export default SectionTitleTwo;

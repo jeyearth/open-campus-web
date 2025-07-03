@@ -46,15 +46,15 @@ const EventDesc = styled.div`
 
 const Schedule: React.FC<ScheduleProps> = ({ schedule }) => {
   return (
-          <Timeline>
-            {schedule.map((item, i) => (
-              <TimelineItem key={i}>
-                <Time>{item.time}</Time>
-                <EventTitle>{item.title}</EventTitle>
-                {item.desc && <EventDesc>{item.desc}</EventDesc>}
-              </TimelineItem>
-            ))}
-          </Timeline>
+    <Timeline>
+      {schedule.map((item, i) => (
+        <TimelineItem key={i}>
+          <Time>{item.time}</Time>
+          <EventTitle>{item.title}</EventTitle>
+          {item.desc && <EventDesc>{item.desc}</EventDesc>}
+        </TimelineItem>
+      ))}
+    </Timeline>
   );
 };
 

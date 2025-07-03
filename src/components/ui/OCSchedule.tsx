@@ -10,16 +10,16 @@ interface OCScheduleProps {
 }
 
 const formatDate = (date: Date) => {
-    const year = date.getFullYear();
-    const month = date.getMonth() + 1;
-    const day = date.getDate();
-    const dayNames = ['日', '月', '火', '水', '木', '金', '土'];
-    const dayName = dayNames[date.getDay()];
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  const dayNames = ['日', '月', '火', '水', '木', '金', '土'];
+  const dayName = dayNames[date.getDay()];
 
-    return {
-        dateString: `${year}年${month}月${day}日`,
-        dayName: dayName
-    };
+  return {
+    dateString: `${year}年${month}月${day}日`,
+    dayName: dayName
+  };
 };
 
 const ScheduleContainer = styled.div`

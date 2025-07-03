@@ -72,7 +72,7 @@ const Programs: React.FC<ProgramsProps> = ({ programs }) => {
     <ProgramsContainer>
       {programs.map((program, index) => (
         <ProgramItem key={index}>
-          <ProgramImage 
+          <ProgramImage
             src={`/programs/${program.image}`}
             alt={program.title}
           />

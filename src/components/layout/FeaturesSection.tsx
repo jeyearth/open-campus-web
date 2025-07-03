@@ -1,24 +1,17 @@
-import React from 'react';
-import styled from 'styled-components';
-import { SectionTitle } from '../ui/SectionTitle';
-import { FaLaptopCode } from "react-icons/fa";
-import { SiFuturelearn } from "react-icons/si";
-import { GiCircuitry } from "react-icons/gi";
-import SectionTitleTwo from '../ui/SectionTitleTwo';
+import React from "react";
+import styled from "styled-components";
+import SectionTitleTwo from "../ui/SectionTitleTwo";
 
 const features = [
   {
-    icon: <FaLaptopCode size={56} style={{ marginBottom: 16, color: '#f59e42' }} />,
     title: '実践的PBL教育',
     desc: '企業連携プロジェクトや、社会課題解決型のPBL（Project Based Learning）で、即戦力となる力を養う。',
   },
   {
-    icon: <GiCircuitry size={56} style={{ marginBottom: 16, color: '#22c55e' }} />,
     title: '最先端研究領域',
     desc: 'AI、データサイエンス、IoT、サイバーセキュリティなど、時代の最先端をいく研究テーマと設備。',
   },
   {
-    icon: <SiFuturelearn size={56} style={{ marginBottom: 16, color: '#2563eb' }} />,
     title: '未来を切り拓くキャリア',
     desc: '幅広い分野への就職実績と、卒業生が描くキャリアパスの可能性。',
   },
@@ -35,36 +28,98 @@ const MyFeatureWrapper = styled.div`
   text-align: center;
 `;
 
-const MyCardContainer = styled.div`
+const FeaturesMainContainer = styled.div`
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 200%;
+  height: 50vh;
   justify-content: center;
   gap: 32px;
-  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 40px;
+    padding: 16px;
+  }
 `;
 
-const MyFeatureCard = styled.div`
-  background: ${(props) => props.theme.pallet.secondary.main};
-  border-radius: 16px;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
-  padding: 32px;
-  width: 260px;
-  min-height: 260px;
+const FeatureImgContainer = styled.div`
+  width: 36%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(37, 99, 235, 0.05) 100%);
   display: flex;
-  flex-direction: column;
   align-items: center;
-  margin-bottom: 16px;
+  justify-content: center;
+  color: ${(props) => props.theme.pallet.primary.main};
+  font-size: 1.2rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.1);
+  border-radius: 100px;
+  overflow: hidden;
+  margin-left: -24%;
+  
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 200px;
+    margin-left: 0;
+    border-radius: 50px;
+  }
 `;
 
-const MyFeatureHeadline = styled.h3`
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin-bottom: 12px;
-  color: ${(props) => props.theme.pallet.heading.main};
-`
+const FeatureContentContainer = styled.div`
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: ${(props) => props.theme.pallet.secondary.main};
+  border-radius: 100px;
+  
+  @media (max-width: 768px) {
+    width: 100%;
+    border-radius: 50px;
+    padding: 24px;
+  }
+`;
 
-const MyFeatureDesc = styled.p`
-  font-size: 0.8rem;
+const FeatureItem = styled.div`
+  text-align: left;
+  width: 50%;
+  padding: 18px;
+  padding-left: 60px;
+  
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 16px 0;
+    padding-left: 0;
+  }
+`;
+
+const FeatureTitle = styled.h3`
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: ${(props) => props.theme.pallet.primary.main};
+  
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+`;
+
+const FeatureDesc = styled.p`
+  font-size: 1rem;
   color: ${(props) => props.theme.pallet.subText.main};
+  width: 50vw;
+  
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    width: 100%;
+  }
+
 `;
 
 const FeaturesSection: React.FC = () => {
@@ -74,20 +129,31 @@ const FeaturesSection: React.FC = () => {
         <SectionTitleTwo
           englishTitle="Features"
           japaneseTitle="大学の特色"
+          isLightTheme={true}
         />
-        {/* <SectionTitle>
-          JFUT情報学科の特色・強み
-        </SectionTitle> */}
-        <MyCardContainer>
-          {features.map((f, i) => (
-            <MyFeatureCard key={i}>
-              {f.icon}
-              <MyFeatureHeadline>{f.title}</MyFeatureHeadline>
-              {/* <p style={{ fontSize: '1rem', color:  }}>{f.desc}</p> */}
-              <MyFeatureDesc>{f.desc}</MyFeatureDesc>
-            </MyFeatureCard>
-          ))}
-        </MyCardContainer>
+        <FeaturesMainContainer>
+          <FeatureImgContainer>
+            <img
+              src="/feature-img.jpeg"
+              alt="Feature 1"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                objectPosition: "20% 50%",
+                transform: "scale(1.20)"
+              }}
+            />
+          </FeatureImgContainer>
+          <FeatureContentContainer>
+            {features.map((f, i) => (
+              <FeatureItem key={i}>
+                <FeatureTitle>{f.title}</FeatureTitle>
+                <FeatureDesc>{f.desc}</FeatureDesc>
+              </FeatureItem>
+            ))}
+          </FeatureContentContainer>
+        </FeaturesMainContainer>
       </MyFeatureWrapper>
     </MyFeaturesSection>
   );

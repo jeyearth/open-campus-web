@@ -1,26 +1,15 @@
 import Head from "next/head";
-import Image from "next/image";
 import { Geist, Geist_Mono } from "next/font/google";
 import styles from "@/styles/Home.module.css";
-import HeroSection from '../components/layout/HeroSection';
 import FeaturesSection from '../components/layout/FeaturesSection';
-import StepsSection from '../components/layout/StepsSection';
-import FieldsSection from '../components/layout/FieldsSection';
-import ProgramsSection from '../components/layout/ProgramsSection';
-import ModelCoursesSection from '../components/layout/ModelCoursesSection';
-import ScheduleSection from '../components/layout/ScheduleSection';
 import VoicesSection from '../components/layout/VoicesSection';
 import CampusLifeSection from '../components/layout/CampusLifeSection';
-import AdmissionSection from '../components/layout/AdmissionSection';
-import AccessSection from '../components/layout/AccessSection';
 import NavBar from '../components/layout/NavBar';
 import Footer from '../components/layout/Footer';
-import HeroSectionTwo from "@/components/layout/HeroSectionTwo";
-import HeroSectionNew from "@/components/layout/HeroSectionNew";
-import FeaturesSectionTwo from "@/components/layout/FeaturesSectionTwo";
-import StepsSectionTwo from "@/components/layout/StepsSectionTwo";
-import AccessSectionTwo from "@/components/layout/AccessSectionTwo";
-import ScheduleSectionTwo from "@/components/layout/ScheduleSectionTwo";
+import HeroSection from "@/components/layout/HeroSection";
+import StepsSection from "@/components/layout/StepsSection";
+import AccessSection from "@/components/layout/AccessSection";
+import ScheduleSection from "@/components/layout/ScheduleSection";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -44,120 +33,18 @@ export default function Home() {
       <NavBar />
       <div style={{
         paddingTop: 56,
-        // paddingBottom: 60,
         overscrollBehavior: 'none',
         WebkitOverflowScrolling: 'touch'
       }}>
-        {/* <section id="hero"><HeroSection /></section> */}
-        <section id="hero"><HeroSectionTwo /></section>
-        {/* <section id="hero"><HeroSectionNew /></section> */}
-        {/* <section id="features"><FeaturesSection /></section> */}
-        <section id="features"><FeaturesSectionTwo /></section>
-        <section id="steps"><StepsSectionTwo /></section>
-        {/* <section id="steps"><StepsSection /></section> */}
-        {/* <section id="fields"><FieldsSection /></section> */}
-        {/* <section id="programs"><ProgramsSection /></section> */}
-        {/* <section id="courses"><ModelCoursesSection /></section> */}
-        {/* <section id="schedule"><ScheduleSection /></section> */}
-        <section id="schedule"><ScheduleSectionTwo /></section>
+        <section id="hero"><HeroSection /></section>
+        <section id="features"><FeaturesSection /></section>
+        <section id="steps"><StepsSection /></section>
+        <section id="schedule"><ScheduleSection /></section>
         <section id="voices"><VoicesSection /></section>
         <section id="campus-life"><CampusLifeSection /></section>
-        {/* <section id="admission"><AdmissionSection /></section> */}
-        {/* <section id="access"><AccessSection /></section> */}
-        <section id="access"><AccessSectionTwo /></section>
+        <section id="access"><AccessSection /></section>
       </div>
       <Footer />
-      {/* <div
-        className={`${styles.page} ${geistSans.variable} ${geistMono.variable}`}
-      >
-        <main className={styles.main}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js logo"
-            width={180}
-            height={38}
-            priority
-          />
-          <ol>
-            <li>
-              Get started by editing!! <code>src/pages/index.tsx</code>.
-            </li>
-            <li>Save and see your changes instantly.</li>
-          </ol>
-
-          <div className={styles.ctas}>
-            <a
-              className={styles.primary}
-              href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                className={styles.logo}
-                src="/vercel.svg"
-                alt="Vercel logomark"
-                width={20}
-                height={20}
-              />
-              Deploy now
-            </a>
-            <a
-              href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.secondary}
-            >
-              Read our docs
-            </a>
-          </div>
-          <HomeView />
-        </main>
-        <footer className={styles.footer}>
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              aria-hidden
-              src="/file.svg"
-              alt="File icon"
-              width={16}
-              height={16}
-            />
-            Learn
-          </a>
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              aria-hidden
-              src="/window.svg"
-              alt="Window icon"
-              width={16}
-              height={16}
-            />
-            Examples
-          </a>
-          <a
-            href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              aria-hidden
-              src="/globe.svg"
-              alt="Globe icon"
-              width={16}
-              height={16}
-            />
-            Go to nextjs.org →
-          </a>
-        </footer>
-      </div> */}
     </>
   );
 }

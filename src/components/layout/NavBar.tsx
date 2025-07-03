@@ -4,14 +4,8 @@ import styled from 'styled-components';
 const navItems = [
   { label: '大学の特色', to: '#features' },
   { label: '3ステップ', to: '#steps' },
-  // { label: '分野紹介', to: '#fields' },
-  // { label: 'プログラム', to: '#programs' },
-  // { label: 'モデルコース', to: '#courses' },
   { label: '一日の流れ', to: '#schedule' },
   { label: '体験者の声', to: '#voices' },
-  // { label: '施設紹介', to: '#facilities' },
-  // { label: 'サークル', to: '#circles' },
-  // { label: '入試・相談', to: '#admission' },
   { label: 'アクセス', to: '#access' },
 ];
 
