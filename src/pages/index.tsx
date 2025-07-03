@@ -18,6 +18,7 @@ import Footer from '../components/layout/Footer';
 import HeroSectionTwo from "@/components/layout/HeroSectionTwo";
 import HeroSectionNew from "@/components/layout/HeroSectionNew";
 import FeaturesSectionTwo from "@/components/layout/FeaturesSectionTwo";
+import StepsSectionTwo from "@/components/layout/StepsSectionTwo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -50,7 +51,8 @@ export default function Home() {
         {/* <section id="hero"><HeroSectionNew /></section> */}
         {/* <section id="features"><FeaturesSection /></section> */}
         <section id="features"><FeaturesSectionTwo /></section>
-        <section id="steps"><StepsSection /></section>
+        <section id="steps"><StepsSectionTwo /></section>
+        {/* <section id="steps"><StepsSection /></section> */}
         <section id="fields"><FieldsSection /></section>
         <section id="programs"><ProgramsSection /></section>
         <section id="courses"><ModelCoursesSection /></section>

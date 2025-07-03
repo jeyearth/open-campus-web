@@ -112,7 +112,7 @@ const StepNumber = styled.div`
 
 const StepCard = styled.div`
   background: ${(props) => props.theme.pallet.baseWhite.main} ;
-  border-radius: 20px;
+  border-radius: 40px;
   box-shadow: 0 2px 16px rgba(0,0,0,0.08);
   padding: 32px 28px;
   min-width: 320px;
