@@ -84,7 +84,7 @@ const HeroCapsule1 = styled.div`
 
 const HeroCapsule2 = styled.div`
     width: 160px;
-    height: 500px;
+    height: 480px;
     background-color: ${(props) => props.theme.pallet.primary.main};
     margin-top: -300px;
     /* margin-left: 30%; */
