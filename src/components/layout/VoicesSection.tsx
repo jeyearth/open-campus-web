@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import SectionTitleTwo from '../ui/SectionTitleTwo';
+import { motion } from 'framer-motion';
 
 const voices = [
   {
@@ -28,7 +29,7 @@ const MyVoicesSection = styled.section`
   padding: 48px 0;
 `;
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   max-width: 900px;
   margin: 0 auto;
   text-align: center;
@@ -132,7 +133,24 @@ const Stars = styled.div`
 const VoicesSection: React.FC = () => {
   return (
     <MyVoicesSection>
-      <Container>
+      <Container
+        variants={{
+          offscreen: {
+            y: 60,
+            opacity: 0,
+          },
+          onscreen: {
+            y: 0,
+            opacity: 1,
+            transition: {
+              duration: 1.4,
+            },
+          },
+        }}
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: false, amount: 0 }}
+      >
         <SectionTitleTwo
           englishTitle="REVIEWS"
           japaneseTitle="体験者の声"

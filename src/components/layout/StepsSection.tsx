@@ -4,6 +4,7 @@ import SectionTitleTwo from "../ui/SectionTitleTwo";
 import OCSchedule from "../ui/OCSchedule";
 import StudyFields from "../ui/StudyFields";
 import Programs from "../ui/Programs";
+import { motion } from "framer-motion";
 
 const ocSchedule = [
     {
@@ -124,7 +125,7 @@ const StepsBackgroundWrapper = styled.div`
     }
 `;
 
-const StepRow = styled.div`
+const StepRow = styled(motion.div)`
   display: flex;
   align-items: flex-start;
   gap: 32px;
@@ -243,7 +244,24 @@ const StepsSection: React.FC = () => {
                         japaneseTitle="参加への3ステップ"
                         isLightTheme={true}
                     />
-                    <StepRow>
+                    <StepRow
+                        variants={{
+                            offscreen: {
+                                y: 140,
+                                opacity: 0,
+                            },
+                            onscreen: {
+                                y: 0,
+                                opacity: 1,
+                                transition: {
+                                    duration: 1,
+                                },
+                            },
+                        }}
+                        initial="offscreen"
+                        whileInView="onscreen"
+                        viewport={{ once: false, amount: 0 }}
+                    >
                         <StepNumber>
                             STEP
                             <StepNumberSpan>
@@ -261,7 +279,24 @@ const StepsSection: React.FC = () => {
                             <ReserveButton href="#reserve">予約はこちらから！</ReserveButton>
                         </StepContentContainer>
                     </StepRow>
-                    <StepRow>
+                    <StepRow
+                        variants={{
+                            offscreen: {
+                                y: 140,
+                                opacity: 0,
+                            },
+                            onscreen: {
+                                y: 0,
+                                opacity: 1,
+                                transition: {
+                                    duration: 1,
+                                },
+                            },
+                        }}
+                        initial="offscreen"
+                        whileInView="onscreen"
+                        viewport={{ once: false, amount: 0 }}
+                    >
                         <StepNumber>
                             STEP
                             <StepNumberSpan>
@@ -278,7 +313,24 @@ const StepsSection: React.FC = () => {
                             <StudyFields fields={studyFieldsData} />
                         </StepContentContainer>
                     </StepRow>
-                    <StepRow>
+                    <StepRow
+                        variants={{
+                            offscreen: {
+                                y: 140,
+                                opacity: 0,
+                            },
+                            onscreen: {
+                                y: 0,
+                                opacity: 1,
+                                transition: {
+                                    duration: 1,
+                                },
+                            },
+                        }}
+                        initial="offscreen"
+                        whileInView="onscreen"
+                        viewport={{ once: false, amount: 0 }}
+                    >
                         <StepNumber>
                             STEP
                             <StepNumberSpan>

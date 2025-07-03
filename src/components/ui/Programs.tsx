@@ -1,5 +1,6 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "styled-components"
+import { motion } from "framer-motion";
 
 interface ProgramsProps {
   programs: {
@@ -21,7 +22,7 @@ const ProgramsContainer = styled.div`
   }
 `;
 
-const ProgramItem = styled.div`
+const ProgramItem = styled(motion.div)`
   position: relative;
   border-radius: 24px;
   overflow: hidden;
@@ -71,7 +72,26 @@ const Programs: React.FC<ProgramsProps> = ({ programs }) => {
   return (
     <ProgramsContainer>
       {programs.map((program, index) => (
-        <ProgramItem key={index}>
+        <ProgramItem
+          key={index}
+          variants={{
+            offscreen: {
+              y: 100,
+              opacity: 0,
+            },
+            onscreen: {
+              y: 0,
+              opacity: 1,
+              transition: {
+                duration: 0.5,
+                delay: index * 0.16,
+              },
+            },
+          }}
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: false, amount: 0 }}
+        >
           <ProgramImage
             src={`/programs/${program.image}`}
             alt={program.title}

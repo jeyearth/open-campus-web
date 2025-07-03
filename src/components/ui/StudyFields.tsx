@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 interface StudyFieldsProps {
   fields: {
@@ -21,7 +22,7 @@ const StudyFieldsContainer = styled.div`
   }
 `;
 
-const StudyFieldItem = styled.div`
+const StudyFieldItem = styled(motion.div)`
   display: flex;
   align-items: flex-start;
   gap: 12px;
@@ -73,7 +74,26 @@ const StudyFields: React.FC<StudyFieldsProps> = ({ fields }) => {
   return (
     <StudyFieldsContainer>
       {fields.map((field, index) => (
-        <StudyFieldItem key={index}>
+        <StudyFieldItem
+          key={index}
+          variants={{
+            offscreen: {
+              y: 100,
+              opacity: 0,
+            },
+            onscreen: {
+              y: 0,
+              opacity: 1,
+              transition: {
+                duration: 0.5,
+                delay: index * 0.16,
+              },
+            },
+          }}
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: false, amount: 0 }}
+        >
           <StudyFieldIcon>
             <StudyFieldIconImage
               src={`/icons/${field.icon}`}

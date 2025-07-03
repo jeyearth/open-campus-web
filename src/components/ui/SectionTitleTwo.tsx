@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 interface SectionTitleTwoProps {
   englishTitle: string;
@@ -13,7 +14,24 @@ const SectionTitleTwo: React.FC<SectionTitleTwoProps> = ({
   isLightTheme = true
 }) => {
   return (
-    <TitileWrapper>
+    <TitileWrapper
+      variants={{
+        offscreen: {
+          y: 60,
+          opacity: 0,
+        },
+        onscreen: {
+          y: 0,
+          opacity: 1,
+          transition: {
+            duration: 0.8,
+          },
+        },
+      }}
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: false, amount: 0 }}
+    >
       <TitleContainer>
         <EnglishTitle $isLightTheme={isLightTheme}>{englishTitle}</EnglishTitle>
         <JapaneseTitle>{japaneseTitle}</JapaneseTitle>
@@ -24,7 +42,7 @@ const SectionTitleTwo: React.FC<SectionTitleTwoProps> = ({
   );
 };
 
-const TitileWrapper = styled.div`
+const TitileWrapper = styled(motion.div)`
     margin-top: 3rem;
     margin-bottom: 3rem;
 `;

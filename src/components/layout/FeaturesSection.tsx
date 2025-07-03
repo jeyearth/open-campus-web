@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import SectionTitleTwo from "../ui/SectionTitleTwo";
+import { motion } from "framer-motion";
 
 const features = [
   {
@@ -22,7 +23,7 @@ const MyFeaturesSection = styled.section`
   padding: 48px 0;
 `;
 
-const MyFeatureWrapper = styled.div`
+const MyFeatureWrapper = styled(motion.div)`
   max-width: 900px;
   margin: 0 auto;
   text-align: center;
@@ -125,7 +126,24 @@ const FeatureDesc = styled.p`
 const FeaturesSection: React.FC = () => {
   return (
     <MyFeaturesSection>
-      <MyFeatureWrapper>
+      <MyFeatureWrapper
+        variants={{
+          offscreen: {
+            x: 100,
+            opacity: 0,
+          },
+          onscreen: {
+            x: 0,
+            opacity: 1,
+            transition: {
+              duration: 2,
+            },
+          },
+        }}
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: false, amount: 0 }}
+      >
         <SectionTitleTwo
           englishTitle="Features"
           japaneseTitle="大学の特色"

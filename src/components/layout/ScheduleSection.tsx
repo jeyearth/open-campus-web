@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import SectionTitleTwo from '../ui/SectionTitleTwo';
 import Schedule from '../ui/Schedule';
+import { motion } from 'framer-motion';
 
 const schedule = [
   { time: '09:30 - 10:00', title: '受付開始' },
@@ -22,7 +23,7 @@ const MyScheduleSection = styled.section`
   }
 `;
 
-const ScheduleWrapper = styled.div`
+const ScheduleWrapper = styled(motion.div)`
   max-width: 900px;
   margin: 0 auto;
 
@@ -33,7 +34,7 @@ const ScheduleWrapper = styled.div`
   }
 `;
 
-const ScheduleBackgroundWrapper = styled.div`
+const ScheduleBackgroundWrapper = styled(motion.div)`
   background-color: ${(props) => props.theme.pallet.baseWhite.main};
   border-radius: 0 40px 40px 0;
   padding-left: 100vw;
@@ -166,7 +167,24 @@ const CampusImage = styled.div`
 const ScheduleSection: React.FC = () => {
   return (
     <MyScheduleSection>
-      <ScheduleWrapper>
+      <ScheduleWrapper
+        variants={{
+          offscreen: {
+            y: 100,
+            opacity: 0,
+          },
+          onscreen: {
+            y: 0,
+            opacity: 1,
+            transition: {
+              duration: 1.4,
+            },
+          },
+        }}
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: false, amount: 0 }}
+      >
         <SectionTitleTwo
           englishTitle="Schedule"
           japaneseTitle="一日の流れ"
@@ -178,7 +196,24 @@ const ScheduleSection: React.FC = () => {
           皆様のご都合に合うような1日としてくださると幸いです。
           （オープンキャンパス参加申し込みは必須です）
         </SectionDescription>
-        <ScheduleBackgroundWrapper>
+        <ScheduleBackgroundWrapper
+          variants={{
+            offscreen: {
+              x: 200,
+              opacity: 0,
+            },
+            onscreen: {
+              x: 0,
+              opacity: 1,
+              transition: {
+                duration: 1.2,
+              },
+            },
+          }}
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: false, amount: 0 }}
+        >
           <FlexContainer>
             <LeftColumn>
               <CampusImageWrapper>

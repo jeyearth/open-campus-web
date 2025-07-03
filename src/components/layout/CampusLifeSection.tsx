@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import SectionTitleTwo from '../ui/SectionTitleTwo';
+import { motion } from 'framer-motion';
 
 const facilities = [
   {
@@ -67,19 +68,6 @@ const Container = styled.div`
   padding: 0 16px;
 `;
 
-const MainTitle = styled.h2`
-  font-size: 2.2rem;
-  font-weight: bold;
-  margin-bottom: 48px;
-  text-align: left;
-  color: #1e293b;
-  
-  @media (max-width: 768px) {
-    font-size: 1.8rem;
-    margin-bottom: 32px;
-  }
-`;
-
 const SectionTitle = styled.h3`
   font-size: 1.8rem;
   font-weight: bold;
@@ -93,7 +81,7 @@ const SectionTitle = styled.h3`
   }
 `;
 
-const FacilitiesGrid = styled.div`
+const FacilitiesGrid = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 24px;
@@ -160,7 +148,7 @@ const FacilityDescription = styled.p`
   }
 `;
 
-const CirclesGrid = styled.div`
+const CirclesGrid = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 24px;
@@ -216,7 +204,24 @@ const CampusLifeSection: React.FC = () => {
           isLightTheme={true}
         />
         <SectionTitle>大学施設紹介</SectionTitle>
-        <FacilitiesGrid>
+        <FacilitiesGrid
+          variants={{
+            offscreen: {
+              y: 100,
+              opacity: 0,
+            },
+            onscreen: {
+              y: 0,
+              opacity: 1,
+              transition: {
+                duration: 1.4,
+              },
+            },
+          }}
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: false, amount: 0 }}
+        >
           {facilities.map((facility, index) => (
             <FacilityCard key={index}>
               <FacilityImage src={facility.img} />
@@ -228,7 +233,24 @@ const CampusLifeSection: React.FC = () => {
         </FacilitiesGrid>
 
         <SectionTitle>部活動・サークル紹介</SectionTitle>
-        <CirclesGrid>
+        <CirclesGrid
+          variants={{
+            offscreen: {
+              y: 100,
+              opacity: 0,
+            },
+            onscreen: {
+              y: 0,
+              opacity: 1,
+              transition: {
+                duration: 1.4,
+              },
+            },
+          }}
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: false, amount: 0 }}
+        >
           {circles.map((circle, index) => (
             <CircleCard key={index} >
               <CircleTitle>{circle.title}</CircleTitle>
