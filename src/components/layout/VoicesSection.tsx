@@ -69,7 +69,7 @@ const VoiceCard = styled.div`
   max-width: 320px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   scroll-snap-align: start;
   
   @media (max-width: 864px) {

@@ -57,12 +57,12 @@ const circles = [
 ];
 
 const CampusLifeSectionWrapper = styled.section`
-  background: #f8fafc;
+  background: ${props => props.theme.pallet.baseWhite.main};
   padding: 48px 0;
 `;
 
 const Container = styled.div`
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 0 16px;
 `;
@@ -108,11 +108,11 @@ const FacilitiesGrid = styled.div`
 
 const FacilityCard = styled.div`
   background: ${props => props.theme.pallet.baseWhite.main};
-  border-radius: 16px;
+  border-radius: 40px;
   padding: 18px 18px;
   text-align: center;
   color: white;
-  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   
   @media (max-width: 768px) {
     padding: 24px 16px;
@@ -122,7 +122,7 @@ const FacilityCard = styled.div`
 const FacilityImage = styled.img`
   width: 100%;
   /* height: 48px; */
-  border-radius: 8px;
+  border-radius: 24px;
   background: #e0e7ef;
   object-fit: cover;
 `;
@@ -174,10 +174,10 @@ const CirclesGrid = styled.div`
 
 const CircleCard = styled.div`
   background: white;
-  border-radius: 16px;
+  border-radius: 32px;
   border-left: 4px solid ${props => props.theme.pallet.primary.main};
   padding: 24px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   
   @media (max-width: 768px) {
     padding: 20px;
@@ -214,7 +214,7 @@ const CampusLifeSection: React.FC = () => {
         <SectionTitleTwo
           englishTitle="Campus Life"
           japaneseTitle="充実のキャンパスライフ"
-          isLightTheme={false}
+          isLightTheme={true}
         />
         {/* <MainTitle>充実のキャンパスライフ</MainTitle> */}
         <SectionTitle>大学施設紹介</SectionTitle>

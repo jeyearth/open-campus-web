@@ -29,7 +29,7 @@ const AccessContent = styled.div`
 
   @media (max-width: 768px) {
     padding: 24px 16px;
-    border-radius: 16px;
+    border-radius: 24px;
   }
 `;
 
