@@ -55,14 +55,14 @@ export default function Home() {
         <section id="features"><FeaturesSectionTwo /></section>
         <section id="steps"><StepsSectionTwo /></section>
         {/* <section id="steps"><StepsSection /></section> */}
-        <section id="fields"><FieldsSection /></section>
-        <section id="programs"><ProgramsSection /></section>
-        <section id="courses"><ModelCoursesSection /></section>
-        <section id="schedule"><ScheduleSection /></section>
+        {/* <section id="fields"><FieldsSection /></section> */}
+        {/* <section id="programs"><ProgramsSection /></section> */}
+        {/* <section id="courses"><ModelCoursesSection /></section> */}
+        {/* <section id="schedule"><ScheduleSection /></section> */}
         <section id="schedule"><ScheduleSectionTwo /></section>
         <section id="voices"><VoicesSection /></section>
         <section id="campus-life"><CampusLifeSection /></section>
-        <section id="admission"><AdmissionSection /></section>
+        {/* <section id="admission"><AdmissionSection /></section> */}
         {/* <section id="access"><AccessSection /></section> */}
         <section id="access"><AccessSectionTwo /></section>
       </div>

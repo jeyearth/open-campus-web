@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import SectionTitleTwo from '../ui/SectionTitleTwo';
 
 const voices = [
   {
@@ -23,7 +24,7 @@ const voices = [
 ];
 
 const MyVoicesSection = styled.section`
-  background: ${(props) => props.theme.pallet.lightGray.main};
+  background: ${(props) => props.theme.pallet.secondary.main};
   padding: 48px 0;
 `;
 
@@ -32,18 +33,6 @@ const Container = styled.div`
   margin: 0 auto;
   text-align: center;
   padding: 0 16px;
-`;
-
-const Title = styled.h2`
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 32px;
-  text-align: left;
-  
-  @media (max-width: 768px) {
-    font-size: 1.8rem;
-    margin-bottom: 24px;
-  }
 `;
 
 const CardsContainer = styled.div`
@@ -74,8 +63,8 @@ const CardsContainer = styled.div`
 `;
 
 const VoiceCard = styled.div`
-  background: #fff;
-  border-radius: 16px;
+  background: ${(props) => props.theme.pallet.baseWhite.main};
+  border-radius: 40px;
   padding: 32px;
   max-width: 320px;
   display: flex;
@@ -99,7 +88,7 @@ const QuoteIcon = styled.div`
 `;
 
 const Comment = styled.p`
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: ${(props) => props.theme.pallet.text.main};
   line-height: 1.6;
   margin-bottom: 24px;
@@ -144,7 +133,11 @@ const VoicesSection: React.FC = () => {
   return (
     <MyVoicesSection>
       <Container>
-        <Title>体験者の声</Title>
+        <SectionTitleTwo
+          englishTitle="REVIEWS"
+          japaneseTitle="体験者の声"
+          isLightTheme={false}
+        />
         <CardsContainer>
           {voices.map((voice, i) => (
             <VoiceCard key={i}>
