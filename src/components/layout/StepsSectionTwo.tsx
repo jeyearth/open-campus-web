@@ -54,8 +54,8 @@ const studyFieldsData = [
 const programsData = [
     {
         image: 'briefing-session.jpeg',
-        title: '学科説明会',
-        subtitle: '各学科の特色や将来性を深く理解',
+        title: '学部説明会',
+        subtitle: '各学部の特色や将来性を深く理解',
     },
     {
         image: 'campus-tour.jpeg',

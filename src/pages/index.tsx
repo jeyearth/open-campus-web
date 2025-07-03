@@ -44,7 +44,7 @@ export default function Home() {
       <NavBar />
       <div style={{
         paddingTop: 56,
-        paddingBottom: 60,
+        // paddingBottom: 60,
         overscrollBehavior: 'none',
         WebkitOverflowScrolling: 'touch'
       }}>

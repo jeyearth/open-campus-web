@@ -1,25 +1,82 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const FooterContainer = styled.footer`
+  width: 100%;
+  height: 300px;
+  background: ${(props) => props.theme.pallet.heading.main};
+  color: #fff;
+  text-align: center;
+  padding: 18px 0;
+  font-size: 0.98rem;
+  letter-spacing: 0.01em;
+  margin-top: 48px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 0;
+
+  @media (max-width: 768px) {
+    height: 200px;
+    padding: 16px;
+  }
+`;
+
+const FooterContent = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 8px;
+  }
+`;
+
+const FooterText = styled.span`
+  color: #fff;
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+  }
+`;
+
+const FooterSeparator = styled.span`
+  color: #fff;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const FooterLink = styled.a`
+  color: #fff;
+  text-decoration: underline;
+  font-weight: bold;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+  }
+`;
 
 const Footer: React.FC = () => {
   return (
-    <footer style={{
-      width: '100%',
-      height: '300px',
-      background: '#1A202C',
-      color: '#fff',
-      textAlign: 'center',
-      padding: '18px 0',
-      fontSize: '0.98rem',
-      letterSpacing: '0.01em',
-      marginTop: 48,
-    }}>
-      <div style={{ maxWidth: 1200, margin: '0 auto', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 16 }}>
-        <span>© 2024 JFUT 情報学科</span>
-        <span>|</span>
-        <a href="mailto:info@jfu.ac.jp" style={{ color: '#fff', textDecoration: 'underline', fontWeight: 'bold' }}>お問い合わせ</a>
-      </div>
-    </footer>
+    <FooterContainer>
+      <FooterContent>
+        <FooterText>© 2024 JFUT 情報学科</FooterText>
+        <FooterSeparator>|</FooterSeparator>
+        <FooterLink href="mailto:info@jfu.ac.jp">お問い合わせ</FooterLink>
+      </FooterContent>
+    </FooterContainer>
   );
 };
 
-export default Footer; 
+export default Footer;
