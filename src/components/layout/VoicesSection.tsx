@@ -159,7 +159,7 @@ const VoicesSection: React.FC = () => {
         <CardsContainer>
           {voices.map((voice, i) => (
             <VoiceCard key={i}>
-              <QuoteIcon>"</QuoteIcon>
+              <QuoteIcon>&quot;</QuoteIcon>
               <Comment>{voice.comment}</Comment>
               <ProfileSection>
                 <ProfileImage src={voice.img} alt={voice.name} />

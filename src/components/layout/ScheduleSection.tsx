@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import SectionTitleTwo from '../ui/SectionTitleTwo';
 import Schedule from '../ui/Schedule';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const schedule = [
   { time: '09:30 - 10:00', title: '受付開始' },
@@ -148,20 +149,6 @@ const CampusImage = styled.div`
     border-radius: 24px;
     transform: none;
   }
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-
-    @media (max-width: 1024px) {
-      border-radius: 24px;
-    }
-
-    @media (max-width: 768px) {
-      border-radius: 24px;
-    }
-  }
 `;
 
 const ScheduleSection: React.FC = () => {
@@ -218,9 +205,11 @@ const ScheduleSection: React.FC = () => {
             <LeftColumn>
               <CampusImageWrapper>
                 <CampusImage>
-                  <img
+                  <Image
                     src="/schedule-campus.jpeg"
                     alt="Campus Building"
+                    fill
+                    objectFit="cover"
                   />
                 </CampusImage>
               </CampusImageWrapper>

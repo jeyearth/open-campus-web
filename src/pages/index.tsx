@@ -1,6 +1,4 @@
 import Head from "next/head";
-import { Geist, Geist_Mono } from "next/font/google";
-import styles from "@/styles/Home.module.css";
 import FeaturesSection from '../components/layout/FeaturesSection';
 import VoicesSection from '../components/layout/VoicesSection';
 import CampusLifeSection from '../components/layout/CampusLifeSection';
@@ -10,16 +8,6 @@ import HeroSection from "@/components/layout/HeroSection";
 import StepsSection from "@/components/layout/StepsSection";
 import AccessSection from "@/components/layout/AccessSection";
 import ScheduleSection from "@/components/layout/ScheduleSection";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export default function Home() {
   return (

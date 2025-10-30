@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import SectionTitleTwo from "../ui/SectionTitleTwo";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const features = [
   {
@@ -61,6 +62,7 @@ const FeatureImgContainer = styled.div`
   border-radius: 100px;
   overflow: hidden;
   margin-left: -24%;
+  position: relative;
   
   @media (max-width: 768px) {
     width: 100%;
@@ -151,14 +153,13 @@ const FeaturesSection: React.FC = () => {
         />
         <FeaturesMainContainer>
           <FeatureImgContainer>
-            <img
+            <Image
               src="/feature-img.jpeg"
               alt="Feature 1"
+              fill
+              objectFit="cover"
+              objectPosition="20% 50%"
               style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                objectPosition: "20% 50%",
                 transform: "scale(1.20)"
               }}
             />
